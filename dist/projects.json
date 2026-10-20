@@ -68,5 +68,122 @@
     ],
     "detail": "Combined SQL/Python workflows, SMOTE, and a cross-validated Random Forest. ROC-AUC increased from 0.81 to 0.89 against a logistic regression baseline.",
     "repo": null
+  },
+  {
+    "id": "maternal-birthweight-analysis",
+    "name": "Maternal Birthweight Analysis",
+    "title": "Birth-weight patterns, carefully examined.",
+    "category": "Statistical analysis",
+    "description": "Report-aligned analysis of 1,236 birth records using imputation, EDA, t-tests, chi-square, and ANOVA.",
+    "detail": "Reconstructed SAS source reproduces the report\u2019s headline statistics in independent checks: one-sample p=0.002416, smoking-group Welch t=8.6398, smoking\u2013parity p=0.753378, and age-group ANOVA p=0.538677. Collaborative work with Devadharshini Udayakumar and Prithwiraj Chatterjee. SAS execution is pending. Observational associations do not establish causation.",
+    "stack": [
+      "SAS",
+      "Statistical inference",
+      "Data analysis"
+    ],
+    "repo": "https://github.com/Abhinav-tanwar/maternal-birthweight-analysis",
+    "visualWord": "birthweight.",
+    "image": "assets/maternal-birthweight-analysis.svg",
+    "imageAlt": "Maternal Birthweight Analysis \u2014 independently calculated result figure"
+  },
+  {
+    "id": "sleep-treatment-response",
+    "name": "Sleep Treatment Response",
+    "title": "Measuring a paired response.",
+    "category": "Statistical analysis",
+    "description": "Paired inference and planning curves for drug and placebo sleep measurements in 10 participants.",
+    "detail": "Mean paired increase: 1.72 hours; 95% CI 0.481\u20132.959; two-sided p=0.01192. Includes normality checks, a placebo benchmark comparison, and a corrected power-planning model. Results independently checked; SAS execution pending.",
+    "stack": [
+      "SAS",
+      "Statistical inference",
+      "Data analysis"
+    ],
+    "repo": "https://github.com/Abhinav-tanwar/sleep-treatment-response",
+    "visualWord": "compare.",
+    "image": "assets/sleep-treatment-response.svg",
+    "imageAlt": "Sleep Treatment Response \u2014 independently calculated result figure"
+  },
+  {
+    "id": "melanoma-lifetime-comparison",
+    "name": "Melanoma Lifetime Comparison",
+    "title": "Comparing observed lifetimes.",
+    "category": "Statistical analysis",
+    "description": "Mean observed-time comparison across two nodule-severity groups, with explicit censoring limitations.",
+    "detail": "417 observations grouped as nodule categories 1\u20132 versus 3\u20134. One-sided Welch t=3.4955, p=0.0002693. The original analysis assumes observed times are true lifetimes and ignores censoring; this is not a censoring-aware survival analysis. SAS execution pending.",
+    "stack": [
+      "SAS",
+      "Statistical inference",
+      "Data analysis"
+    ],
+    "repo": "https://github.com/Abhinav-tanwar/melanoma-lifetime-comparison",
+    "visualWord": "observe.",
+    "image": "assets/melanoma-lifetime-comparison.svg",
+    "imageAlt": "Melanoma Lifetime Comparison \u2014 independently calculated result figure"
+  },
+  {
+    "id": "survey-response-association",
+    "name": "Survey Response Association",
+    "title": "From counts to association.",
+    "category": "Statistical analysis",
+    "description": "Contingency tables and relative-risk estimation for 27,802 aggregate survey responses.",
+    "detail": "Uses expected-count diagnostics, Pearson chi-square, conditional proportions, and explicitly ordered relative risk. Female/Male affirmative-response RR=2.7556 (95% CI 2.6695\u20132.8445). Association is not causation. SAS execution pending.",
+    "stack": [
+      "SAS",
+      "Statistical inference",
+      "Data analysis"
+    ],
+    "repo": "https://github.com/Abhinav-tanwar/survey-response-association",
+    "visualWord": "associate.",
+    "image": "assets/survey-response-association.svg",
+    "imageAlt": "Survey Response Association \u2014 independently calculated result figure"
+  },
+  {
+    "id": "ratings-distribution-analysis",
+    "name": "Ratings Distribution Analysis",
+    "title": "Understanding categorical patterns.",
+    "category": "Statistical analysis",
+    "description": "Marginal, joint, and conditional rating distributions from 18 supplied observations.",
+    "detail": "Correctly oriented conditional tables estimate ratings within recorded gender categories. Personal names and row identifiers are omitted. Small-sample descriptive analysis with independently checked counts; SAS execution pending.",
+    "stack": [
+      "SAS",
+      "Statistical inference",
+      "Data analysis"
+    ],
+    "repo": "https://github.com/Abhinav-tanwar/ratings-distribution-analysis",
+    "visualWord": "distribute.",
+    "image": "assets/ratings-distribution-analysis.svg",
+    "imageAlt": "Ratings Distribution Analysis \u2014 independently calculated result figure"
+  },
+  {
+    "id": "tuition-trend-analysis",
+    "name": "Tuition Trend Analysis",
+    "title": "Tracing tuition over time.",
+    "category": "Statistical analysis",
+    "description": "SAS workflow for tuition distributions, five-number summaries, regression, and residual diagnostics.",
+    "detail": "Source recovered from the supplied code PDF. The original university tuition dataset is unavailable, so no coefficients or numerical results are claimed. Repository includes the expected schema and steps to run once the input is recovered.",
+    "stack": [
+      "SAS",
+      "Statistical inference",
+      "Data analysis"
+    ],
+    "repo": "https://github.com/Abhinav-tanwar/tuition-trend-analysis",
+    "visualWord": "trend.",
+    "status": "Dataset unavailable"
+  },
+  {
+    "id": "fluoride-treatment-effects",
+    "name": "Fluoride Treatment Effects",
+    "title": "Separating treatment and context.",
+    "category": "Statistical analysis",
+    "description": "Factorial ANOVA workflow for treatment, institution, and changes in DMFT.",
+    "detail": "SAS GLM analysis includes treatment-by-institution interaction, additive and treatment-only comparisons, adjusted post-hoc tests, and residual diagnostics. The original dataset is unavailable; no numerical findings are claimed.",
+    "stack": [
+      "SAS",
+      "Statistical inference",
+      "Data analysis"
+    ],
+    "repo": "https://github.com/Abhinav-tanwar/fluoride-treatment-effects",
+    "visualWord": "evaluate.",
+    "status": "Dataset unavailable"
   }
 ]
