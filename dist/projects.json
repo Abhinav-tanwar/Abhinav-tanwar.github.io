@@ -50,15 +50,15 @@
     "id": "permit-valuation",
     "title": "Making value measurable.",
     "category": "Machine learning",
-    "name": "Construction Permit Valuation",
-    "description": "Regularized regression for valuation across more than 5,000 construction permits.",
+    "name": "Permit Valuation Assistant",
+    "description": "Saved-model permit estimates from a 5,000-row sample, with validated inputs and documented evaluation.",
     "stack": [
       "Python",
-      "Regression",
-      "Power BI"
+      "scikit-learn",
+      "Streamlit"
     ],
-    "detail": "Applied regularized regression to predict permit values, reducing RMSE by 15%, and communicated results through Power BI.",
-    "repo": null,
+    "detail": "Training-only preprocessing and a saved regression pipeline produce every valuation. Capped-target evaluation is documented; optional factor explanations cannot change the model output.",
+    "repo": "https://github.com/Abhinav-tanwar/permit-valuation-assistant",
     "featured": true,
     "visualWord": "estimate."
   },
@@ -83,7 +83,7 @@
     "title": "Birth-weight patterns, carefully examined.",
     "category": "Statistical analysis",
     "description": "Report-aligned analysis of 1,236 birth records using imputation, EDA, t-tests, chi-square, and ANOVA.",
-    "detail": "Reconstructed SAS source reproduces the report\u2019s headline statistics in independent checks: one-sample p=0.002416, smoking-group Welch t=8.6398, smoking\u2013parity p=0.753378, and age-group ANOVA p=0.538677. Collaborative work with Devadharshini Udayakumar and Prithwiraj Chatterjee. SAS execution is pending. Observational associations do not establish causation.",
+    "detail": "Reconstructed SAS source reproduces the report’s headline statistics in independent checks: one-sample p=0.002416, smoking-group Welch t=8.6398, smoking–parity p=0.753378, and age-group ANOVA p=0.538677. Collaborative work with Devadharshini Udayakumar and Prithwiraj Chatterjee. SAS execution is pending. Observational associations do not establish causation.",
     "stack": [
       "SAS",
       "Statistical inference",
@@ -92,7 +92,7 @@
     "repo": "https://github.com/Abhinav-tanwar/maternal-birthweight-analysis",
     "visualWord": "birthweight.",
     "image": "assets/maternal-birthweight-analysis.svg",
-    "imageAlt": "Maternal Birthweight Analysis \u2014 independently calculated result figure",
+    "imageAlt": "Maternal Birthweight Analysis — independently calculated result figure",
     "featured": true
   },
   {
@@ -101,7 +101,7 @@
     "title": "Measuring a paired response.",
     "category": "Statistical analysis",
     "description": "Paired inference and planning curves for drug and placebo sleep measurements in 10 participants.",
-    "detail": "Mean paired increase: 1.72 hours; 95% CI 0.481\u20132.959; two-sided p=0.01192. Includes normality checks, a placebo benchmark comparison, and a corrected power-planning model. Results independently checked; SAS execution pending.",
+    "detail": "Mean paired increase: 1.72 hours; 95% CI 0.481–2.959; two-sided p=0.01192. Includes normality checks, a placebo benchmark comparison, and a corrected power-planning model. Results independently checked; SAS execution pending.",
     "stack": [
       "SAS",
       "Statistical inference",
@@ -110,7 +110,7 @@
     "repo": "https://github.com/Abhinav-tanwar/sleep-treatment-response",
     "visualWord": "compare.",
     "image": "assets/sleep-treatment-response.svg",
-    "imageAlt": "Sleep Treatment Response \u2014 independently calculated result figure",
+    "imageAlt": "Sleep Treatment Response — independently calculated result figure",
     "featured": false
   },
   {
@@ -119,7 +119,7 @@
     "title": "Comparing observed lifetimes.",
     "category": "Statistical analysis",
     "description": "Mean observed-time comparison across two nodule-severity groups, with explicit censoring limitations.",
-    "detail": "417 observations grouped as nodule categories 1\u20132 versus 3\u20134. One-sided Welch t=3.4955, p=0.0002693. The original analysis assumes observed times are true lifetimes and ignores censoring; this is not a censoring-aware survival analysis. SAS execution pending.",
+    "detail": "417 observations grouped as nodule categories 1–2 versus 3–4. One-sided Welch t=3.4955, p=0.0002693. The original analysis assumes observed times are true lifetimes and ignores censoring; this is not a censoring-aware survival analysis. SAS execution pending.",
     "stack": [
       "SAS",
       "Statistical inference",
@@ -128,7 +128,7 @@
     "repo": "https://github.com/Abhinav-tanwar/melanoma-lifetime-comparison",
     "visualWord": "observe.",
     "image": "assets/melanoma-lifetime-comparison.svg",
-    "imageAlt": "Melanoma Lifetime Comparison \u2014 independently calculated result figure",
+    "imageAlt": "Melanoma Lifetime Comparison — independently calculated result figure",
     "featured": false
   },
   {
@@ -137,7 +137,7 @@
     "title": "From counts to association.",
     "category": "Statistical analysis",
     "description": "Contingency tables and relative-risk estimation for 27,802 aggregate survey responses.",
-    "detail": "Uses expected-count diagnostics, Pearson chi-square, conditional proportions, and explicitly ordered relative risk. Female/Male affirmative-response RR=2.7556 (95% CI 2.6695\u20132.8445). Association is not causation. SAS execution pending.",
+    "detail": "Uses expected-count diagnostics, Pearson chi-square, conditional proportions, and explicitly ordered relative risk. Female/Male affirmative-response RR=2.7556 (95% CI 2.6695–2.8445). Association is not causation. SAS execution pending.",
     "stack": [
       "SAS",
       "Statistical inference",
@@ -146,7 +146,7 @@
     "repo": "https://github.com/Abhinav-tanwar/survey-response-association",
     "visualWord": "associate.",
     "image": "assets/survey-response-association.svg",
-    "imageAlt": "Survey Response Association \u2014 independently calculated result figure",
+    "imageAlt": "Survey Response Association — independently calculated result figure",
     "featured": false
   },
   {
@@ -164,7 +164,7 @@
     "repo": "https://github.com/Abhinav-tanwar/ratings-distribution-analysis",
     "visualWord": "distribute.",
     "image": "assets/ratings-distribution-analysis.svg",
-    "imageAlt": "Ratings Distribution Analysis \u2014 independently calculated result figure",
+    "imageAlt": "Ratings Distribution Analysis — independently calculated result figure",
     "featured": false
   },
   {
