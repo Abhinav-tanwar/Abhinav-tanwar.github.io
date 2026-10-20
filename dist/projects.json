@@ -1,0 +1,72 @@
+[
+  {
+    "id": "document-search",
+    "title": "Documents into answers.",
+    "category": "Generative AI",
+    "name": "AI Document Search",
+    "description": "A PDF question-answering tool that combines semantic search with retrieval-augmented generation.",
+    "stack": [
+      "LangChain",
+      "FastAPI",
+      "FAISS"
+    ],
+    "detail": "Retrieves relevant document passages before generating answers. Built as a PDF RAG chatbot with an API layer.",
+    "repo": null
+  },
+  {
+    "id": "code-review",
+    "title": "A second pair of eyes.",
+    "category": "Developer tools",
+    "name": "AI Code Review",
+    "description": "An LLM-powered pull-request review bot that brings automated feedback into the GitHub workflow.",
+    "stack": [
+      "FastAPI",
+      "GitHub Actions",
+      "PostgreSQL"
+    ],
+    "detail": "Integrates the GitHub API and Actions with an LLM review service, retaining review history in PostgreSQL.",
+    "repo": null
+  },
+  {
+    "id": "memory-agent",
+    "title": "An assistant that remembers.",
+    "category": "Generative AI",
+    "name": "AI Agent with Memory",
+    "description": "A custom assistant with session state and semantic memory across conversations.",
+    "stack": [
+      "LangGraph",
+      "Redis",
+      "ChromaDB"
+    ],
+    "detail": "Combines LangChain and LangGraph orchestration with FastAPI, Redis session state, and ChromaDB semantic memory.",
+    "repo": null
+  },
+  {
+    "id": "permit-valuation",
+    "title": "Making value measurable.",
+    "category": "Machine learning",
+    "name": "Construction Permit Valuation",
+    "description": "Regularized regression for valuation across more than 5,000 construction permits.",
+    "stack": [
+      "Python",
+      "Regression",
+      "Power BI"
+    ],
+    "detail": "Applied regularized regression to predict permit values, reducing RMSE by 15%, and communicated results through Power BI.",
+    "repo": null
+  },
+  {
+    "id": "heart-disease",
+    "title": "Better signals. Better predictions.",
+    "category": "Machine learning",
+    "name": "Heart Disease Prediction",
+    "description": "A classification pipeline built around careful data preparation and cross-validation.",
+    "stack": [
+      "Python",
+      "SQL",
+      "scikit-learn"
+    ],
+    "detail": "Combined SQL/Python workflows, SMOTE, and a cross-validated Random Forest. ROC-AUC increased from 0.81 to 0.89 against a logistic regression baseline.",
+    "repo": null
+  }
+]
