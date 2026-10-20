@@ -66,15 +66,15 @@
     "id": "heart-disease",
     "title": "Better signals. Better predictions.",
     "category": "Machine learning",
-    "name": "Heart Disease Prediction",
-    "description": "A classification pipeline built around careful data preparation and cross-validation.",
+    "name": "Heart Attack Classification",
+    "description": "Leakage-controlled comparison of classifiers on a supplied health-survey sample.",
     "stack": [
       "Python",
-      "SQL",
-      "scikit-learn"
+      "scikit-learn",
+      "SMOTENC"
     ],
-    "detail": "Combined SQL/Python workflows, SMOTE, and a cross-validated Random Forest. ROC-AUC increased from 0.81 to 0.89 against a logistic regression baseline.",
-    "repo": null,
+    "detail": "Corrected logistic baseline: ROC-AUC 0.8004 and average precision 0.2040. At the default threshold it predicts no positive cases; oversampling trades more recall for false positives. Three-fold training CV and an untouched test split are documented. Retrospective self-reported history, not future clinical risk.",
+    "repo": "https://github.com/Abhinav-tanwar/heart-attack-classification",
     "featured": false
   },
   {
