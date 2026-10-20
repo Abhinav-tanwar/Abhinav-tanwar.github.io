@@ -11,7 +11,9 @@
       "FAISS"
     ],
     "detail": "Retrieves relevant document passages before generating answers. Built as a PDF RAG chatbot with an API layer.",
-    "repo": null
+    "repo": null,
+    "featured": true,
+    "visualWord": "retrieve."
   },
   {
     "id": "code-review",
@@ -25,7 +27,9 @@
       "PostgreSQL"
     ],
     "detail": "Integrates the GitHub API and Actions with an LLM review service, retaining review history in PostgreSQL.",
-    "repo": null
+    "repo": null,
+    "featured": true,
+    "visualWord": "review."
   },
   {
     "id": "memory-agent",
@@ -39,7 +43,8 @@
       "ChromaDB"
     ],
     "detail": "Combines LangChain and LangGraph orchestration with FastAPI, Redis session state, and ChromaDB semantic memory.",
-    "repo": null
+    "repo": null,
+    "featured": false
   },
   {
     "id": "permit-valuation",
@@ -53,7 +58,9 @@
       "Power BI"
     ],
     "detail": "Applied regularized regression to predict permit values, reducing RMSE by 15%, and communicated results through Power BI.",
-    "repo": null
+    "repo": null,
+    "featured": true,
+    "visualWord": "estimate."
   },
   {
     "id": "heart-disease",
@@ -67,7 +74,8 @@
       "scikit-learn"
     ],
     "detail": "Combined SQL/Python workflows, SMOTE, and a cross-validated Random Forest. ROC-AUC increased from 0.81 to 0.89 against a logistic regression baseline.",
-    "repo": null
+    "repo": null,
+    "featured": false
   },
   {
     "id": "maternal-birthweight-analysis",
@@ -84,7 +92,8 @@
     "repo": "https://github.com/Abhinav-tanwar/maternal-birthweight-analysis",
     "visualWord": "birthweight.",
     "image": "assets/maternal-birthweight-analysis.svg",
-    "imageAlt": "Maternal Birthweight Analysis \u2014 independently calculated result figure"
+    "imageAlt": "Maternal Birthweight Analysis \u2014 independently calculated result figure",
+    "featured": true
   },
   {
     "id": "sleep-treatment-response",
@@ -101,7 +110,8 @@
     "repo": "https://github.com/Abhinav-tanwar/sleep-treatment-response",
     "visualWord": "compare.",
     "image": "assets/sleep-treatment-response.svg",
-    "imageAlt": "Sleep Treatment Response \u2014 independently calculated result figure"
+    "imageAlt": "Sleep Treatment Response \u2014 independently calculated result figure",
+    "featured": false
   },
   {
     "id": "melanoma-lifetime-comparison",
@@ -118,7 +128,8 @@
     "repo": "https://github.com/Abhinav-tanwar/melanoma-lifetime-comparison",
     "visualWord": "observe.",
     "image": "assets/melanoma-lifetime-comparison.svg",
-    "imageAlt": "Melanoma Lifetime Comparison \u2014 independently calculated result figure"
+    "imageAlt": "Melanoma Lifetime Comparison \u2014 independently calculated result figure",
+    "featured": false
   },
   {
     "id": "survey-response-association",
@@ -135,7 +146,8 @@
     "repo": "https://github.com/Abhinav-tanwar/survey-response-association",
     "visualWord": "associate.",
     "image": "assets/survey-response-association.svg",
-    "imageAlt": "Survey Response Association \u2014 independently calculated result figure"
+    "imageAlt": "Survey Response Association \u2014 independently calculated result figure",
+    "featured": false
   },
   {
     "id": "ratings-distribution-analysis",
@@ -152,7 +164,8 @@
     "repo": "https://github.com/Abhinav-tanwar/ratings-distribution-analysis",
     "visualWord": "distribute.",
     "image": "assets/ratings-distribution-analysis.svg",
-    "imageAlt": "Ratings Distribution Analysis \u2014 independently calculated result figure"
+    "imageAlt": "Ratings Distribution Analysis \u2014 independently calculated result figure",
+    "featured": false
   },
   {
     "id": "tuition-trend-analysis",
@@ -168,7 +181,8 @@
     ],
     "repo": "https://github.com/Abhinav-tanwar/tuition-trend-analysis",
     "visualWord": "trend.",
-    "status": "Dataset unavailable"
+    "status": "Dataset unavailable",
+    "featured": false
   },
   {
     "id": "fluoride-treatment-effects",
@@ -184,6 +198,7 @@
     ],
     "repo": "https://github.com/Abhinav-tanwar/fluoride-treatment-effects",
     "visualWord": "evaluate.",
-    "status": "Dataset unavailable"
+    "status": "Dataset unavailable",
+    "featured": false
   }
 ]
