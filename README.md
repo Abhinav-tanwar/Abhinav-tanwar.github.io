@@ -17,3 +17,7 @@ Each project defines its name, category, description, stack, repository URL, and
 ## Publishing
 
 Changes merged into `main` trigger `.github/workflows/pages.yml`, which publishes `dist/`. No build step or API keys are required. Contact: abhinav.t@careeritjob.com.
+
+## Evidence on project cards
+
+Featured entries may include an `evidence` object with two headline `metrics`, an observed `result`, a `method`, a `limit`, screenshot `caption`, and primary-source `sources`. Keep automated checks, synthetic integration tests, and held-out model evaluation explicitly distinct. Screenshots live in `dist/assets/evidence/` and show the actual local applications. Results and methodology expand in the project dialog; the landing page stays limited to four featured projects.
