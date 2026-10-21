@@ -14,7 +14,36 @@
     "detail": "PDF ingestion, semantic search, and retrieval-augmented answers in a React workspace. Python FastAPI backend, LangChain, OpenAI, and a local FAISS index.",
     "repo": "https://github.com/Abhinav-tanwar/AI-Document-Search-RAG-Chatbot",
     "featured": true,
-    "visualWord": "retrieve."
+    "visualWord": "retrieve.",
+    "evidence": {
+      "imageAlt": "AI Document Search local workspace with a PDF library and document chat.",
+      "caption": "Actual local application: PDF library and document-chat workspace.",
+      "metrics": [
+        {
+          "value": "16",
+          "label": "automated tests"
+        },
+        {
+          "value": "Page 2",
+          "label": "live source citation verified"
+        }
+      ],
+      "result": "A live OpenAI check indexed the fictional Atlas PDF and answered its budget question with “$4,800” plus a supporting passage from page 2.",
+      "method": "PDF ingestion → passage chunking → FAISS retrieval → source-grounded generation. Python tests use deterministic doubles, including a mocked wire-level API contract.",
+      "limit": "This verifies one synthetic-document integration path. It is not a retrieval-accuracy or latency benchmark.",
+      "sources": [
+        {
+          "label": "Validation record",
+          "url": "https://github.com/Abhinav-tanwar/AI-Document-Search-RAG-Chatbot/blob/main/VALIDATION.md"
+        },
+        {
+          "label": "Source and architecture",
+          "url": "https://github.com/Abhinav-tanwar/AI-Document-Search-RAG-Chatbot"
+        }
+      ]
+    },
+    "image": "assets/evidence/document-search.png",
+    "imageAlt": "AI Document Search local workspace with a PDF library and document chat."
   },
   {
     "id": "code-review",
@@ -30,7 +59,36 @@
     "detail": "Reviews pull-request diffs and validates findings against added lines before posting advisory comments. Includes a local review workspace, SQLite history, signed webhooks, and a trusted GitHub Actions workflow. Never executes reviewed code or approves merges.",
     "repo": "https://github.com/Abhinav-tanwar/AI-Code-Review-Bot",
     "featured": true,
-    "visualWord": "review."
+    "visualWord": "review.",
+    "evidence": {
+      "imageAlt": "AI Code Review Bot showing a synthetic payment diff and two validated findings.",
+      "caption": "Actual live-model output on a synthetic diff: SQL injection and division by zero.",
+      "metrics": [
+        {
+          "value": "22",
+          "label": "automated tests"
+        },
+        {
+          "value": "2",
+          "label": "findings on a seeded diff"
+        }
+      ],
+      "result": "A live model review identified SQL injection and division by zero in a synthetic payment diff. A separate GitHub Actions smoke test posted an inline division-by-zero comment on PR #1.",
+      "method": "Parse the diff, request a structured review, validate findings against added lines, then publish an advisory COMMENT review against the expected commit. The test PR was closed without merging.",
+      "limit": "Seeded examples demonstrate integration behavior, not general defect-detection precision or recall. Reviewed code is never executed, and the bot does not approve merges.",
+      "sources": [
+        {
+          "label": "Live inline review",
+          "url": "https://github.com/Abhinav-tanwar/AI-Code-Review-Bot/pull/1#discussion_r4331760004"
+        },
+        {
+          "label": "Validation record",
+          "url": "https://github.com/Abhinav-tanwar/AI-Code-Review-Bot/blob/main/VALIDATION.md"
+        }
+      ]
+    },
+    "image": "assets/evidence/code-review.png",
+    "imageAlt": "AI Code Review Bot showing a synthetic payment diff and two validated findings."
   },
   {
     "id": "memory-agent",
@@ -47,7 +105,36 @@
     "detail": "Explicit long-term memory with semantic retrieval, editable Whisper transcripts, visible context sources, and memory deletion/export controls. Local ChromaDB persistence and a Streamlit workspace; no autonomous external actions.",
     "repo": "https://github.com/Abhinav-tanwar/Custom-AI-Agent-With-Memory",
     "featured": true,
-    "visualWord": "remember."
+    "visualWord": "remember.",
+    "evidence": {
+      "imageAlt": "Custom AI Agent With Memory showing a real local conversation and memory controls.",
+      "caption": "Actual local workspace: chat, voice-note input, and explicit memory controls.",
+      "metrics": [
+        {
+          "value": "17",
+          "label": "automated tests"
+        },
+        {
+          "value": "Verified",
+          "label": "persistent recall & deletion"
+        }
+      ],
+      "result": "A synthetic project detail was embedded, saved in ChromaDB, recalled after reopening the store, used in a fresh conversation, and deleted successfully. A live Whisper request also transcribed synthetic speech.",
+      "method": "Explicit save → OpenAI embeddings → local ChromaDB → bounded LangChain context. Automated checks cover persistence, duplication, relevance filtering, deletion, memory opt-out, and audio validation.",
+      "limit": "These are workflow checks, not a memory-accuracy benchmark. The app is local and single-user; conversations are session-only while selected memories persist.",
+      "sources": [
+        {
+          "label": "Validation record",
+          "url": "https://github.com/Abhinav-tanwar/Custom-AI-Agent-With-Memory/blob/main/VALIDATION.md"
+        },
+        {
+          "label": "Tests and implementation",
+          "url": "https://github.com/Abhinav-tanwar/Custom-AI-Agent-With-Memory/tree/main/tests"
+        }
+      ]
+    },
+    "image": "assets/evidence/memory-agent.png",
+    "imageAlt": "Custom AI Agent With Memory showing a real local conversation and memory controls."
   },
   {
     "id": "permit-valuation",
@@ -63,7 +150,36 @@
     "detail": "Training-only preprocessing and a saved regression pipeline produce every valuation. Capped-target evaluation is documented; optional factor explanations cannot change the model output.",
     "repo": "https://github.com/Abhinav-tanwar/permit-valuation-assistant",
     "featured": true,
-    "visualWord": "estimate."
+    "visualWord": "estimate.",
+    "evidence": {
+      "imageAlt": "Permit Valuation Assistant showing validated form inputs and a model-predicted valuation.",
+      "caption": "Actual local model output for one example input. The displayed estimate is not a measured accuracy score.",
+      "metrics": [
+        {
+          "value": "0.780",
+          "label": "holdout R² · log target"
+        },
+        {
+          "value": "1,500",
+          "label": "held-out records"
+        }
+      ],
+      "result": "On a 5,000-record sample, the saved regression pipeline achieved holdout R² 0.7803 and log RMSE 2.2335. Dollar MAE was $178,907 and dollar RMSE $829,198 against the capped target.",
+      "method": "3,500 training / 1,500 test records with seed 42. Fit preprocessing and the 99th-percentile target cap on training data only; evaluate log1p of capped valuation on the untouched random holdout.",
+      "limit": "Log-scale R² is not dollar accuracy. Dollar errors are large, the target is capped, and the sample has limited category/date/location variety. This does not establish future appraisal performance.",
+      "sources": [
+        {
+          "label": "Exact model metrics",
+          "url": "https://github.com/Abhinav-tanwar/permit-valuation-assistant/blob/main/artifacts/model_metrics.json"
+        },
+        {
+          "label": "Methodology and limitations",
+          "url": "https://github.com/Abhinav-tanwar/permit-valuation-assistant/blob/main/docs/methodology.md"
+        }
+      ]
+    },
+    "image": "assets/evidence/permit-valuation.png",
+    "imageAlt": "Permit Valuation Assistant showing validated form inputs and a model-predicted valuation."
   },
   {
     "id": "heart-disease",
@@ -86,7 +202,7 @@
     "title": "Birth-weight patterns, carefully examined.",
     "category": "Statistical analysis",
     "description": "Report-aligned analysis of 1,236 birth records using imputation, EDA, t-tests, chi-square, and ANOVA.",
-    "detail": "Reconstructed SAS source reproduces the report\u2019s headline statistics in independent checks: one-sample p=0.002416, smoking-group Welch t=8.6398, smoking\u2013parity p=0.753378, and age-group ANOVA p=0.538677. Collaborative work with Devadharshini Udayakumar and Prithwiraj Chatterjee. SAS execution is pending. Observational associations do not establish causation.",
+    "detail": "Reconstructed SAS source reproduces the report’s headline statistics in independent checks: one-sample p=0.002416, smoking-group Welch t=8.6398, smoking–parity p=0.753378, and age-group ANOVA p=0.538677. Collaborative work with Devadharshini Udayakumar and Prithwiraj Chatterjee. SAS execution is pending. Observational associations do not establish causation.",
     "stack": [
       "SAS",
       "Statistical inference",
@@ -95,7 +211,7 @@
     "repo": "https://github.com/Abhinav-tanwar/maternal-birthweight-analysis",
     "visualWord": "birthweight.",
     "image": "assets/maternal-birthweight-analysis.svg",
-    "imageAlt": "Maternal Birthweight Analysis \u2014 independently calculated result figure",
+    "imageAlt": "Maternal Birthweight Analysis — independently calculated result figure",
     "featured": false
   },
   {
@@ -104,7 +220,7 @@
     "title": "Measuring a paired response.",
     "category": "Statistical analysis",
     "description": "Paired inference and planning curves for drug and placebo sleep measurements in 10 participants.",
-    "detail": "Mean paired increase: 1.72 hours; 95% CI 0.481\u20132.959; two-sided p=0.01192. Includes normality checks, a placebo benchmark comparison, and a corrected power-planning model. Results independently checked; SAS execution pending.",
+    "detail": "Mean paired increase: 1.72 hours; 95% CI 0.481–2.959; two-sided p=0.01192. Includes normality checks, a placebo benchmark comparison, and a corrected power-planning model. Results independently checked; SAS execution pending.",
     "stack": [
       "SAS",
       "Statistical inference",
@@ -113,7 +229,7 @@
     "repo": "https://github.com/Abhinav-tanwar/sleep-treatment-response",
     "visualWord": "compare.",
     "image": "assets/sleep-treatment-response.svg",
-    "imageAlt": "Sleep Treatment Response \u2014 independently calculated result figure",
+    "imageAlt": "Sleep Treatment Response — independently calculated result figure",
     "featured": false
   },
   {
@@ -122,7 +238,7 @@
     "title": "Comparing observed lifetimes.",
     "category": "Statistical analysis",
     "description": "Mean observed-time comparison across two nodule-severity groups, with explicit censoring limitations.",
-    "detail": "417 observations grouped as nodule categories 1\u20132 versus 3\u20134. One-sided Welch t=3.4955, p=0.0002693. The original analysis assumes observed times are true lifetimes and ignores censoring; this is not a censoring-aware survival analysis. SAS execution pending.",
+    "detail": "417 observations grouped as nodule categories 1–2 versus 3–4. One-sided Welch t=3.4955, p=0.0002693. The original analysis assumes observed times are true lifetimes and ignores censoring; this is not a censoring-aware survival analysis. SAS execution pending.",
     "stack": [
       "SAS",
       "Statistical inference",
@@ -131,7 +247,7 @@
     "repo": "https://github.com/Abhinav-tanwar/melanoma-lifetime-comparison",
     "visualWord": "observe.",
     "image": "assets/melanoma-lifetime-comparison.svg",
-    "imageAlt": "Melanoma Lifetime Comparison \u2014 independently calculated result figure",
+    "imageAlt": "Melanoma Lifetime Comparison — independently calculated result figure",
     "featured": false
   },
   {
@@ -140,7 +256,7 @@
     "title": "From counts to association.",
     "category": "Statistical analysis",
     "description": "Contingency tables and relative-risk estimation for 27,802 aggregate survey responses.",
-    "detail": "Uses expected-count diagnostics, Pearson chi-square, conditional proportions, and explicitly ordered relative risk. Female/Male affirmative-response RR=2.7556 (95% CI 2.6695\u20132.8445). Association is not causation. SAS execution pending.",
+    "detail": "Uses expected-count diagnostics, Pearson chi-square, conditional proportions, and explicitly ordered relative risk. Female/Male affirmative-response RR=2.7556 (95% CI 2.6695–2.8445). Association is not causation. SAS execution pending.",
     "stack": [
       "SAS",
       "Statistical inference",
@@ -149,7 +265,7 @@
     "repo": "https://github.com/Abhinav-tanwar/survey-response-association",
     "visualWord": "associate.",
     "image": "assets/survey-response-association.svg",
-    "imageAlt": "Survey Response Association \u2014 independently calculated result figure",
+    "imageAlt": "Survey Response Association — independently calculated result figure",
     "featured": false
   },
   {
@@ -167,7 +283,7 @@
     "repo": "https://github.com/Abhinav-tanwar/ratings-distribution-analysis",
     "visualWord": "distribute.",
     "image": "assets/ratings-distribution-analysis.svg",
-    "imageAlt": "Ratings Distribution Analysis \u2014 independently calculated result figure",
+    "imageAlt": "Ratings Distribution Analysis — independently calculated result figure",
     "featured": false
   },
   {
