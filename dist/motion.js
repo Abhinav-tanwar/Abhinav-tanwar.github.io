@@ -85,7 +85,7 @@
   reduced.addEventListener('change',event=>{paused=event.matches;sync();});
   document.addEventListener('visibilitychange',()=>{stop();start();});
   if ('IntersectionObserver' in window) {
-    new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;stop();start();},{rootMargin:'100px'}).observe(canvas);
+    new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;button.hidden=!visible;stop();start();},{rootMargin:'100px'}).observe(canvas);
     const reveal = new IntersectionObserver(entries=>entries.forEach(entry=>{
       if(entry.isIntersecting){entry.target.classList.add('is-visible');reveal.unobserve(entry.target);}
     }),{threshold:.08});

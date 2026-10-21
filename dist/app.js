@@ -77,7 +77,11 @@ function render(filter = 'All') {
     const detail = element('button', 'results-link', 'Results & screenshots ↗');
     detail.setAttribute('aria-label', 'Explore evidence for ' + project.name);
     detail.addEventListener('click', () => showProject(project, detail));
-    article.append(detail); grid.append(article);
+    const actions = element('div', 'project-actions');
+    actions.append(detail);
+    const repository = githubLink(project.repo, 'GitHub ↗');
+    if (repository) { repository.setAttribute('aria-label', 'View ' + project.name + ' on GitHub'); actions.append(repository); }
+    article.append(actions); grid.append(article);
   });
   document.querySelector('#project-status').textContent = visible.length + ' projects shown';
   document.dispatchEvent(new Event('projects-rendered'));
@@ -95,7 +99,7 @@ dialog.addEventListener('click', event => {
     if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
   }
 });
-fetch('projects.json?v=evidence-20261020', {cache: 'no-store'})
+fetch('projects.json?v=review-20261020', {cache: 'no-store'})
   .then(response => { if (!response.ok) throw Error('Project data unavailable'); return response.json(); })
   .then(data => { projects = data.filter(project => project.featured === true); render(); })
   .catch(() => { grid.textContent = 'Project details are temporarily unavailable. Explore my experience below or visit GitHub.'; });
