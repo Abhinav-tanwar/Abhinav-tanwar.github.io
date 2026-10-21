@@ -3,15 +3,16 @@
     "id": "document-search",
     "title": "Documents into answers.",
     "category": "Generative AI",
-    "name": "AI Document Search",
-    "description": "A PDF question-answering tool that combines semantic search with retrieval-augmented generation.",
+    "name": "AI Document Search (RAG Chatbot)",
+    "description": "Chat with PDFs using semantic retrieval and answers grounded in source passages.",
     "stack": [
+      "OpenAI",
       "LangChain",
       "FastAPI",
       "FAISS"
     ],
-    "detail": "Retrieves relevant document passages before generating answers. Built as a PDF RAG chatbot with an API layer.",
-    "repo": null,
+    "detail": "PDF ingestion, semantic search, and retrieval-augmented answers in a React workspace. Python FastAPI backend, LangChain, OpenAI, and a local FAISS index.",
+    "repo": "https://github.com/Abhinav-tanwar/AI-Document-Search-RAG-Chatbot",
     "featured": true,
     "visualWord": "retrieve."
   },
@@ -19,15 +20,15 @@
     "id": "code-review",
     "title": "A second pair of eyes.",
     "category": "Developer tools",
-    "name": "AI Code Review",
-    "description": "An LLM-powered pull-request review bot that brings automated feedback into the GitHub workflow.",
+    "name": "AI Code Review Bot",
+    "description": "Automatic GitHub PR feedback with validated inline findings and human review.",
     "stack": [
+      "OpenAI",
       "FastAPI",
-      "GitHub Actions",
-      "PostgreSQL"
+      "GitHub Actions"
     ],
-    "detail": "Integrates the GitHub API and Actions with an LLM review service, retaining review history in PostgreSQL.",
-    "repo": null,
+    "detail": "Reviews pull-request diffs and validates findings against added lines before posting advisory comments. Includes a local review workspace, SQLite history, signed webhooks, and a trusted GitHub Actions workflow. Never executes reviewed code or approves merges.",
+    "repo": "https://github.com/Abhinav-tanwar/AI-Code-Review-Bot",
     "featured": true,
     "visualWord": "review."
   },
@@ -35,16 +36,18 @@
     "id": "memory-agent",
     "title": "An assistant that remembers.",
     "category": "Generative AI",
-    "name": "AI Agent with Memory",
-    "description": "A custom assistant with session state and semantic memory across conversations.",
+    "name": "Custom AI Agent With Memory",
+    "description": "A voice and text assistant that recalls only the details you choose to save.",
     "stack": [
-      "LangGraph",
-      "Redis",
-      "ChromaDB"
+      "LangChain",
+      "Whisper",
+      "ChromaDB",
+      "Streamlit"
     ],
-    "detail": "Combines LangChain and LangGraph orchestration with FastAPI, Redis session state, and ChromaDB semantic memory.",
-    "repo": null,
-    "featured": false
+    "detail": "Explicit long-term memory with semantic retrieval, editable Whisper transcripts, visible context sources, and memory deletion/export controls. Local ChromaDB persistence and a Streamlit workspace; no autonomous external actions.",
+    "repo": "https://github.com/Abhinav-tanwar/Custom-AI-Agent-With-Memory",
+    "featured": true,
+    "visualWord": "remember."
   },
   {
     "id": "permit-valuation",
@@ -83,7 +86,7 @@
     "title": "Birth-weight patterns, carefully examined.",
     "category": "Statistical analysis",
     "description": "Report-aligned analysis of 1,236 birth records using imputation, EDA, t-tests, chi-square, and ANOVA.",
-    "detail": "Reconstructed SAS source reproduces the report’s headline statistics in independent checks: one-sample p=0.002416, smoking-group Welch t=8.6398, smoking–parity p=0.753378, and age-group ANOVA p=0.538677. Collaborative work with Devadharshini Udayakumar and Prithwiraj Chatterjee. SAS execution is pending. Observational associations do not establish causation.",
+    "detail": "Reconstructed SAS source reproduces the report\u2019s headline statistics in independent checks: one-sample p=0.002416, smoking-group Welch t=8.6398, smoking\u2013parity p=0.753378, and age-group ANOVA p=0.538677. Collaborative work with Devadharshini Udayakumar and Prithwiraj Chatterjee. SAS execution is pending. Observational associations do not establish causation.",
     "stack": [
       "SAS",
       "Statistical inference",
@@ -92,8 +95,8 @@
     "repo": "https://github.com/Abhinav-tanwar/maternal-birthweight-analysis",
     "visualWord": "birthweight.",
     "image": "assets/maternal-birthweight-analysis.svg",
-    "imageAlt": "Maternal Birthweight Analysis — independently calculated result figure",
-    "featured": true
+    "imageAlt": "Maternal Birthweight Analysis \u2014 independently calculated result figure",
+    "featured": false
   },
   {
     "id": "sleep-treatment-response",
@@ -101,7 +104,7 @@
     "title": "Measuring a paired response.",
     "category": "Statistical analysis",
     "description": "Paired inference and planning curves for drug and placebo sleep measurements in 10 participants.",
-    "detail": "Mean paired increase: 1.72 hours; 95% CI 0.481–2.959; two-sided p=0.01192. Includes normality checks, a placebo benchmark comparison, and a corrected power-planning model. Results independently checked; SAS execution pending.",
+    "detail": "Mean paired increase: 1.72 hours; 95% CI 0.481\u20132.959; two-sided p=0.01192. Includes normality checks, a placebo benchmark comparison, and a corrected power-planning model. Results independently checked; SAS execution pending.",
     "stack": [
       "SAS",
       "Statistical inference",
@@ -110,7 +113,7 @@
     "repo": "https://github.com/Abhinav-tanwar/sleep-treatment-response",
     "visualWord": "compare.",
     "image": "assets/sleep-treatment-response.svg",
-    "imageAlt": "Sleep Treatment Response — independently calculated result figure",
+    "imageAlt": "Sleep Treatment Response \u2014 independently calculated result figure",
     "featured": false
   },
   {
@@ -119,7 +122,7 @@
     "title": "Comparing observed lifetimes.",
     "category": "Statistical analysis",
     "description": "Mean observed-time comparison across two nodule-severity groups, with explicit censoring limitations.",
-    "detail": "417 observations grouped as nodule categories 1–2 versus 3–4. One-sided Welch t=3.4955, p=0.0002693. The original analysis assumes observed times are true lifetimes and ignores censoring; this is not a censoring-aware survival analysis. SAS execution pending.",
+    "detail": "417 observations grouped as nodule categories 1\u20132 versus 3\u20134. One-sided Welch t=3.4955, p=0.0002693. The original analysis assumes observed times are true lifetimes and ignores censoring; this is not a censoring-aware survival analysis. SAS execution pending.",
     "stack": [
       "SAS",
       "Statistical inference",
@@ -128,7 +131,7 @@
     "repo": "https://github.com/Abhinav-tanwar/melanoma-lifetime-comparison",
     "visualWord": "observe.",
     "image": "assets/melanoma-lifetime-comparison.svg",
-    "imageAlt": "Melanoma Lifetime Comparison — independently calculated result figure",
+    "imageAlt": "Melanoma Lifetime Comparison \u2014 independently calculated result figure",
     "featured": false
   },
   {
@@ -137,7 +140,7 @@
     "title": "From counts to association.",
     "category": "Statistical analysis",
     "description": "Contingency tables and relative-risk estimation for 27,802 aggregate survey responses.",
-    "detail": "Uses expected-count diagnostics, Pearson chi-square, conditional proportions, and explicitly ordered relative risk. Female/Male affirmative-response RR=2.7556 (95% CI 2.6695–2.8445). Association is not causation. SAS execution pending.",
+    "detail": "Uses expected-count diagnostics, Pearson chi-square, conditional proportions, and explicitly ordered relative risk. Female/Male affirmative-response RR=2.7556 (95% CI 2.6695\u20132.8445). Association is not causation. SAS execution pending.",
     "stack": [
       "SAS",
       "Statistical inference",
@@ -146,7 +149,7 @@
     "repo": "https://github.com/Abhinav-tanwar/survey-response-association",
     "visualWord": "associate.",
     "image": "assets/survey-response-association.svg",
-    "imageAlt": "Survey Response Association — independently calculated result figure",
+    "imageAlt": "Survey Response Association \u2014 independently calculated result figure",
     "featured": false
   },
   {
@@ -164,7 +167,7 @@
     "repo": "https://github.com/Abhinav-tanwar/ratings-distribution-analysis",
     "visualWord": "distribute.",
     "image": "assets/ratings-distribution-analysis.svg",
-    "imageAlt": "Ratings Distribution Analysis — independently calculated result figure",
+    "imageAlt": "Ratings Distribution Analysis \u2014 independently calculated result figure",
     "featured": false
   },
   {
