@@ -64,7 +64,7 @@ function render(filter = 'All') {
   grid.classList.toggle("is-filtered", filter !== "All");
   const visible = projects.filter(project => filter === 'All' || project.category === filter);
   visible.forEach(project => {
-    const article = element('article', project.id === 'evaluation-studio' ? 'project project--evaluation' : 'project');
+    const article = element('article', project.id === 'evaluation-studio' ? 'project project--benchmark' : 'project');
     const copy = element('div', 'project-copy');
     const preview = project.image ? screenshot(project) : element('div', 'project-visual');
     const info = element('div', 'project-info');
@@ -102,7 +102,7 @@ dialog.addEventListener('click', event => {
     if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
   }
 });
-fetch('projects.json?v=evaluation-20261102', {cache: 'no-store'})
+fetch('projects.json?v=balanced-20261102', {cache: 'no-store'})
   .then(response => { if (!response.ok) throw Error('Project data unavailable'); return response.json(); })
   .then(data => { projects = data.filter(project => project.featured === true); render(); })
   .catch(() => { grid.textContent = 'Project details are temporarily unavailable. Explore my experience below or visit GitHub.'; });
