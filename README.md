@@ -10,7 +10,7 @@ python3 -m http.server 8040 --directory dist
 
 ## Project curation
 
-`dist/projects.json` is the project catalog. Only entries with `featured: true` appear on the site. Keep the featured selection to four projects: three AI applications and one applied machine learning system. Link the complete repository collection instead of expanding the landing page.
+`dist/projects.json` is the project catalog. Only entries with `featured: true` appear on the site. Keep the featured selection to four projects: an AI evaluation workspace, two AI applications, and one applied machine learning system. Link the complete repository collection instead of expanding the landing page.
 
 Each project defines its name, category, description, stack, repository URL, and expanded detail. Keep descriptions aligned with the actual implementation and avoid unsupported performance claims. The catalog retains earlier work for future curation.
 
@@ -20,4 +20,4 @@ Changes merged into `main` trigger `.github/workflows/pages.yml`, which publishe
 
 ## Evidence on project cards
 
-Featured entries may include an `evidence` object with two headline `metrics`, an observed `result`, a `method`, a `limit`, screenshot `caption`, and primary-source `sources`. Keep automated checks, synthetic integration tests, and held-out model evaluation explicitly distinct. Screenshots live in `dist/assets/evidence/` and show the actual local applications. Results and methodology expand in the project dialog; the landing page stays limited to four featured projects.
+Featured entries may include an `evidence` object with two headline `metrics`, an observed `result`, a `method`, a `limit`, screenshot `caption`, and primary-source `sources`. Keep automated checks, synthetic integration tests, and held-out model evaluation explicitly distinct. The lead project uses a wider evidence layout; secondary projects stay compact. Screenshots live in `dist/assets/evidence/` and show the actual local applications. Results and methodology expand in the project dialog; the landing page stays limited to four featured projects.
