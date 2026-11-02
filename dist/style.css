@@ -40,30 +40,23 @@ body:has(dialog[open]){overflow:hidden}
 .dialog-toolbar #close-dialog{position:static;float:none;flex-shrink:0}
 @media(max-width:600px){.dialog-toolbar{top:-22px;margin:-10px -10px 8px}}
 
-/* Lead project: evaluation evidence with room to read. */
-.projects{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
-.project{min-width:0;background:var(--surface);box-shadow:none}
-.project-copy{min-width:0}.project-copy>.project-description{margin-inline:12px}.project-copy>.tags{margin-inline:12px}
-.project--evaluation{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);align-items:center;gap:28px;padding:22px;border-radius:12px}
-.project--evaluation .project-visual{aspect-ratio:1512/1319;align-self:center;border:0;border-radius:4px;background:#171816}
-.project--evaluation .project-copy{padding:12px 20px 12px 0}
-.project--evaluation h3{font-size:clamp(26px,2.5vw,38px);line-height:1.2;letter-spacing:-1px}
-.project--evaluation .project-category{font-size:12px;text-transform:none;letter-spacing:0;margin-top:0}
-.project--evaluation .project-description{font-size:17px;line-height:1.65;color:var(--ink);margin-block:20px 12px}
-.project--evaluation .benchmark-note{margin:0 12px 24px;font-size:12px;color:var(--muted);line-height:1.6}
-.project--evaluation .project-metrics{gap:20px;padding-block:22px;margin-block:24px}
-.project--evaluation .project-metrics dd{font-size:clamp(28px,3vw,44px);letter-spacing:-1.5px;white-space:nowrap}
-.project--evaluation .project-metrics dt{font-size:12px;max-width:170px}
-.project--evaluation .tags span{font-size:11px;border:0;padding:0;background:none;margin-right:10px}
-.project--evaluation .project-actions{margin-top:28px}
-.project--evaluation:hover,.project--evaluation:focus-within{transform:none;box-shadow:none}
-.project--evaluation .project-visual img{height:auto;aspect-ratio:1512/1319}
-@media(min-width:1101px){.project:not(.project--evaluation) h3{font-size:19px;max-width:100%}.project:not(.project--evaluation) .project-info{gap:8px}.project:not(.project--evaluation) .project-metrics dd{font-size:25px}}
-@media(min-width:701px) and (max-width:1100px){.projects{grid-template-columns:repeat(2,minmax(0,1fr))}.project--evaluation{gap:18px;padding:16px}.project--evaluation .project-copy{padding:0}.project--evaluation .project-description{font-size:15px}.project--evaluation .project-metrics dd{font-size:28px}.project:last-child{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:20px;padding:18px}.project:last-child .project-visual{border:0}}
-@media(max-width:700px){.projects{grid-template-columns:1fr}.project--evaluation{display:flex;flex-direction:column;gap:10px;padding:12px}.project--evaluation .project-copy{padding:10px 0;width:100%}.project--evaluation .project-visual{width:100%;margin:0}.project--evaluation h3{font-size:28px}.project--evaluation .project-description{font-size:16px;margin-top:18px}.project--evaluation .project-metrics{gap:12px}.project--evaluation .project-metrics dd{font-size:32px}.project--evaluation .project-metrics dt{font-size:11px}.project--evaluation .project-actions{margin-top:20px}.project-copy>.project-description{min-height:0}}
-@media(max-width:360px){.project--evaluation .project-metrics dd{font-size:27px}.project--evaluation h3{font-size:25px}}
-.project--evaluation .project-metrics>div{justify-content:flex-end}
-.projects.is-filtered{grid-template-columns:1fr}
-.projects.is-filtered .project:not(.project--evaluation){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:center;padding:22px}
-.projects.is-filtered .project:not(.project--evaluation) .project-visual{border:0}
-@media(max-width:700px){.projects.is-filtered .project:not(.project--evaluation){display:block;padding:12px}.project--evaluation .project-metrics dt{min-height:34px}}
+/* Equal project cards, with a centered final row. */
+.projects{grid-template-columns:repeat(6,minmax(0,1fr));align-items:stretch}
+.project{grid-column:span 2;min-width:0;background:var(--surface);display:flex;flex-direction:column;box-shadow:none}
+.projects:not(.is-filtered) .project:nth-child(4){grid-column:2/span 2}
+.projects:not(.is-filtered) .project:nth-child(5){grid-column:4/span 2}
+.project-copy{min-width:0;display:flex;flex-direction:column;flex:1}
+.project-copy>.project-description{margin-inline:12px;min-height:72px}
+.project-copy>.tags{margin-inline:12px;min-height:30px;align-content:start}
+.project-info{min-height:56px;align-items:start}
+.project-info h3{font-size:20px;max-width:100%;line-height:1.4}
+.project-metrics>div{justify-content:flex-end}
+.project-metrics dt{min-height:30px}
+.project-metrics dd{font-size:26px;white-space:nowrap}
+.project-actions{margin-top:auto;padding-top:16px}
+.project-visual{flex-shrink:0}
+.project--benchmark .project-visual img{object-fit:cover;object-position:top;height:100%}
+.projects.is-filtered{grid-template-columns:repeat(2,minmax(0,1fr))}
+.projects.is-filtered .project{grid-column:auto}
+@media(min-width:701px) and (max-width:1100px){.projects{grid-template-columns:repeat(4,minmax(0,1fr))}.projects:not(.is-filtered) .project:nth-child(4){grid-column:span 2}.projects:not(.is-filtered) .project:nth-child(5){grid-column:2/span 2}}
+@media(max-width:700px){.projects,.projects.is-filtered{grid-template-columns:1fr}.projects .project,.projects:not(.is-filtered) .project:nth-child(4),.projects:not(.is-filtered) .project:nth-child(5){grid-column:auto}.project-info{min-height:0}.project-copy>.project-description{min-height:0}.project-metrics dt{min-height:30px}}
