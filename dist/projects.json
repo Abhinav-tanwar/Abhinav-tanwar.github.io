@@ -1,5 +1,52 @@
 [
   {
+    "id": "evaluation-studio",
+    "title": "Better answers, measured.",
+    "name": "AI Evaluation Studio",
+    "category": "Developer tools",
+    "description": "Compare RAG configurations, inspect failed answers, and catch regressions before release.",
+    "stack": [
+      "Python",
+      "FastAPI",
+      "React",
+      "MLflow"
+    ],
+    "detail": "A reproducible evaluation workspace with versioned questions, retrieval comparisons, citation checks, independent human review, and CI regression gates. Optional OpenAI inference and MLflow tracking; SQLite or PostgreSQL history.",
+    "repo": "https://github.com/Abhinav-tanwar/AI-Evaluation-Studio",
+    "featured": true,
+    "image": "assets/evidence/evaluation-studio.png",
+    "imageWidth": 1512,
+    "imageHeight": 1319,
+    "imageAlt": "AI Evaluation Studio holdout comparison showing 18 of 20 exact matches, source recall, regression gates, and two remaining failures.",
+    "benchmarkNote": "Local extractive adapter · 20 synthetic holdout questions",
+    "evidence": {
+      "caption": "Actual holdout run: 18/20 candidate exact matches versus 17/20 baseline. The two remaining failures are visible in the case explorer.",
+      "metrics": [
+        {
+          "value": "85 → 90%",
+          "label": "exact match · holdout"
+        },
+        {
+          "value": "100%",
+          "label": "source recall · 16 answerable cases"
+        }
+      ],
+      "result": "On 20 reserved synthetic holdout questions, exact matching improved from 17/20 to 18/20. Expected source recall increased from 15/16 to 16/16 answerable cases. Correct abstention improved from 2/4 to 3/4. Both regression gates passed; 23 automated tests passed.",
+      "method": "Baseline: token overlap, top 1, threshold 0.25. Candidate: BM25, top 3, threshold 0.45. Both use the same extractive answer adapter. The authored dataset contains 30 development and 20 holdout questions over 40 passages from five fictional documents. Reports retain dataset and implementation fingerprints. Docker and PostgreSQL persistence were verified.",
+      "limit": "This compares complete retrieval configurations on a small synthetic benchmark, not general LLM accuracy or an isolated algorithm effect. Two holdout answers remain incorrect. Live OpenAI inference was not used for these results; strict matching penalizes paraphrases.",
+      "sources": [
+        {
+          "label": "Results and methodology",
+          "url": "https://github.com/Abhinav-tanwar/AI-Evaluation-Studio/blob/main/docs/results.md"
+        },
+        {
+          "label": "Raw holdout report",
+          "url": "https://github.com/Abhinav-tanwar/AI-Evaluation-Studio/blob/main/reports/holdout.json"
+        }
+      ]
+    }
+  },
+  {
     "id": "document-search",
     "title": "Documents into answers.",
     "category": "Generative AI",
@@ -104,7 +151,7 @@
     ],
     "detail": "Explicit long-term memory with semantic retrieval, editable Whisper transcripts, visible context sources, and memory deletion/export controls. Local ChromaDB persistence and a Streamlit workspace; no autonomous external actions.",
     "repo": "https://github.com/Abhinav-tanwar/Custom-AI-Agent-With-Memory",
-    "featured": true,
+    "featured": false,
     "visualWord": "remember.",
     "evidence": {
       "imageAlt": "Custom AI Agent With Memory showing a real local conversation and memory controls.",

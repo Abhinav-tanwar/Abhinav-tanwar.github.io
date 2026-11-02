@@ -26,7 +26,7 @@ function screenshot(project, expanded = false) {
   const figure = element('figure', expanded ? 'evidence-figure' : 'project-visual');
   const image = element('img'); image.src = project.image;
   image.alt = project.imageAlt || project.name; image.loading = 'lazy';
-  image.width = 1512; image.height = 810;
+  image.width = project.imageWidth || 1512; image.height = project.imageHeight || 810;
   figure.append(image);
   if (expanded) {
     figure.append(element('figcaption', '', project.evidence.caption));
@@ -61,9 +61,11 @@ function showProject(project, trigger) {
 }
 function render(filter = 'All') {
   grid.replaceChildren();
+  grid.classList.toggle("is-filtered", filter !== "All");
   const visible = projects.filter(project => filter === 'All' || project.category === filter);
   visible.forEach(project => {
-    const article = element('article', 'project');
+    const article = element('article', project.id === 'evaluation-studio' ? 'project project--evaluation' : 'project');
+    const copy = element('div', 'project-copy');
     const preview = project.image ? screenshot(project) : element('div', 'project-visual');
     const info = element('div', 'project-info');
     const button = element('button', '', '↗');
@@ -71,9 +73,10 @@ function render(filter = 'All') {
     button.addEventListener('click', () => showProject(project, button));
     info.append(element('h3', '', project.name), button);
     const tags = element('div', 'tags'); project.stack.forEach(tool => tags.append(element('span', '', tool)));
-    article.append(preview, element('span', 'project-category', project.category), info, element('p', '', project.description));
-    if (project.evidence) article.append(metrics(project.evidence.metrics, 'project-metrics'));
-    article.append(tags);
+    copy.append(element('span', 'project-category', project.category), info, element('p', 'project-description', project.description));
+    if (project.benchmarkNote) copy.append(element('p', 'benchmark-note', project.benchmarkNote));
+    if (project.evidence) copy.append(metrics(project.evidence.metrics, 'project-metrics'));
+    copy.append(tags);
     const detail = element('button', 'results-link', 'Results & screenshots ↗');
     detail.setAttribute('aria-label', 'Explore evidence for ' + project.name);
     detail.addEventListener('click', () => showProject(project, detail));
@@ -81,7 +84,7 @@ function render(filter = 'All') {
     actions.append(detail);
     const repository = githubLink(project.repo, 'GitHub ↗');
     if (repository) { repository.setAttribute('aria-label', 'View ' + project.name + ' on GitHub'); actions.append(repository); }
-    article.append(actions); grid.append(article);
+    copy.append(actions); article.append(preview, copy); grid.append(article);
   });
   document.querySelector('#project-status').textContent = visible.length + ' projects shown';
   document.dispatchEvent(new Event('projects-rendered'));
@@ -99,7 +102,7 @@ dialog.addEventListener('click', event => {
     if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
   }
 });
-fetch('projects.json?v=review-20261020', {cache: 'no-store'})
+fetch('projects.json?v=evaluation-20261102', {cache: 'no-store'})
   .then(response => { if (!response.ok) throw Error('Project data unavailable'); return response.json(); })
   .then(data => { projects = data.filter(project => project.featured === true); render(); })
   .catch(() => { grid.textContent = 'Project details are temporarily unavailable. Explore my experience below or visit GitHub.'; });
